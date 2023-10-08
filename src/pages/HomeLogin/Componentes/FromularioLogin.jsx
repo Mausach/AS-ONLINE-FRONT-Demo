@@ -47,7 +47,7 @@ export const ForularioLogin = () => {
 
                 <h3 className=''>
                     <i className="bi bi-person-circle"> </i>
-                    INICIAR SESIÒN
+                    INICIAR SESIÓN
                 </h3>
                 <label for="exampleFormControlInput1" className="form-label" onSubmit={onSubmit}>
 

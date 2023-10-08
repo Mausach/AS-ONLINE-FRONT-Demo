@@ -3,11 +3,13 @@ import 'animate.css/animate.min.css'; // Importa los estilos de animate.css
 
 import '../HomeLogin/home.css'
 import { ForularioLogin } from './Componentes/FromularioLogin';
+import Navbar from '../Navbar/Navbar';
 
 
 export const HomeLogin = () => {
 
     const [showWelcome, setShowWelcome] = useState(true);
+    
 
   useEffect(() => {
     // Después de 3 segundos, oculta la animación de bienvenida y muestra tu contenido principal
@@ -19,6 +21,8 @@ export const HomeLogin = () => {
       clearTimeout(timer);
     };
   }, []);
+
+  
 
       return (
         <div className='text-light'>
@@ -32,6 +36,7 @@ export const HomeLogin = () => {
         // muestra tu contenido principal o redirige al usuario
         <>
           {/* Aquí puedes agregar tu contenido principal */}
+          <Navbar/>
           <ForularioLogin/>
           {/* O puedes redirigir al usuario usando window.location.href */}
           

@@ -4,6 +4,7 @@ import 'animate.css/animate.min.css'; // Importa los estilos de animate.css
 import '../HomeLogin/home.css'
 import { ForularioLogin } from './Componentes/FromularioLogin';
 import Navbar from '../Navbar/Navbar';
+import Footer from '../Footer/Footer';
 
 
 export const HomeLogin = () => {
@@ -39,6 +40,7 @@ export const HomeLogin = () => {
           <Navbar/>
           <ForularioLogin/>
           {/* O puedes redirigir al usuario usando window.location.href */}
+          <Footer/>
           
         </>
       )}  

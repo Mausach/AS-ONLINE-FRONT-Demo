@@ -1,0 +1,5 @@
+/*aqui van los estilos que se aplicaran en todaa la pagina en general por ej: el fondo para todas las pantallas*/
+body{
+    min-height: 100vh;
+    background:linear-gradient(to right,#13005A,#1C82AD) /*1 i 3 de la pal 1*/
+}

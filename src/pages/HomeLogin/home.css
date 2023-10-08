@@ -1,0 +1,9 @@
+.tamañoAnimacion{
+    font-size: 200px;
+    text-align: center;
+    padding: 10px;
+}
+
+.customHeigth{
+    min-height: 70vh;
+}

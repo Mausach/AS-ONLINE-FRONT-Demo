@@ -39,14 +39,14 @@ export const FormularioSD = () => {
   };
 
   return (
-    <div className="container-sm">
+    <div className="container-sm p-5" >
       <form
-        className="p-5 p-sm-4 rounded text-center border border-white m-3"
+        className="p-5 p-sm-5 rounded text-center border border-white text-light"
         onSubmit={onSubmit}
       >
         <h1 className="">As-online</h1>
 
-        <h3 className="">
+        <h3 className="text-light">
           {/* <i className="bi bi-person-circle"> </i> */}
           FORMULARIO DE SINDICATO
         </h3>
@@ -61,7 +61,7 @@ export const FormularioSD = () => {
         <input
           type="text"
           name="Nombre"
-          className="form-control mb-3"
+          className="form-control mb-2"
           placeholder="Nombre de Sindicato"
           maxLength={30}
         //   value={user.email}
@@ -74,7 +74,7 @@ export const FormularioSD = () => {
         <input
           type="text"
           name="Nombre Corto"
-          className="form-control"
+          className="form-control mb-2"
           placeholder="Nombre Corto"
           minLength={5}
           maxLength={20}
@@ -90,7 +90,7 @@ export const FormularioSD = () => {
         <input
           type="number"
           name="CUIT"
-          className="form-control"
+          className="form-control mb-2"
           placeholder="CUIT"
           minLength={5}
           maxLength={20}
@@ -103,7 +103,7 @@ export const FormularioSD = () => {
         </label>
           <input type="number" 
           name="CBU"
-          className="form-control mb-3"
+          className="form-control mb-2"
           placeholder="CBU"
           maxLength={30}
           // value={user.email}
@@ -114,7 +114,7 @@ export const FormularioSD = () => {
         </label>
           <input type="text" 
           name="Banco"
-          className="form-control mb-3"
+          className="form-control mb-2"
           placeholder="Banco" 
           maxLength={30}
           // value={user.email}
@@ -125,7 +125,7 @@ export const FormularioSD = () => {
         </label>
           <input type="number" 
           name="CBU"
-          className="form-control mb-3"
+          className="form-control mb-2 "
           placeholder="CBU"
           maxLength={30}
           // value={user.email}
@@ -136,7 +136,7 @@ export const FormularioSD = () => {
         </label>
           <input type="number" 
           name="CBU"
-          className="form-control mb-3"
+          className="form-control mb-2"
           placeholder="CBU"
           maxLength={30}
           // value={user.email}
@@ -145,10 +145,10 @@ export const FormularioSD = () => {
           <label for="exampleFormControlInput1" className="form-label p-2">
             Localidad
         </label>
-          <input type="number" 
-          name="CBU"
-          className="form-control mb-3 text-white"
-          placeholder="CBU"
+          <input type="text" 
+          name="localidad"
+          className="form-control mb-2"
+          placeholder="Localidad"
           maxLength={30}
           // value={user.email}
         //   onChange={onInputChange}
@@ -160,7 +160,7 @@ export const FormularioSD = () => {
         <input
           type="text"
           name="CUIT"
-          className="form-control"
+          className="form-control mb-2"
           placeholder="CUIT"
           minLength={5}
           maxLength={20}
@@ -174,7 +174,7 @@ export const FormularioSD = () => {
         <input
           type="number"
           name="logo"
-          className="form-control"
+          className="form-control mb-2"
           placeholder="logo de su sindicato"
           minLength={5}
           maxLength={20}
@@ -203,5 +203,7 @@ export const FormularioSD = () => {
         </label>
       </form>
     </div>
+  
+
   );
 };

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 //import { starLogin } from '../helpers/StarLogin'; 
 import swal from 'sweetalert';
+import SelectLocalidad from './BuscadorSelect';
 
 
 export const FormularioReegisterECk = () => {
@@ -12,9 +13,10 @@ export const FormularioReegisterECk = () => {
         email: "",
         password: "",
         confirmarPassword: "",
-        telefono:"",
-        domicilio:"",
-
+        telefono: "",
+        domicilio: "",
+        cuit: "",
+        localidad: "",
     });
 
     const navigate = useNavigate();
@@ -32,73 +34,139 @@ export const FormularioReegisterECk = () => {
         e.preventDefault();
         if (
             user.email.trim() === "" ||
-            user.password.trim() === "") {
+            user.password.trim() === "" ||
+            user.nombreEC.trim() === "" ||
+            user.confirmarPassword.trim() === "" ||
+            user.telefono.trim() === "" ||
+            user.domicilio.trim() === "" ||
+            user.cuit.trim() === "" ||
+            user.localidad.trim() === "") {
             swal("ERROR", "todos los campos son obligatorios", "error");
         } else {
 
-            swal("FUNCIONA", user.email +" "+ user.password, "success");
+            swal("FUNCIONA", user.email + " " + user.password, "success");
             //starLogin(user.email, user.password, navigate);//llama al metodo starLogin del helper 
         }
     }
 
     return (
         <div className='container-sm'>
-            <form className="p-5 p-sm-4 rounded text-center border border-white m-3" onSubmit={onSubmit}>
+            <form className="p-5 p-sm-4 rounded text-center border border-white m-3 row" onSubmit={onSubmit}>
 
-            <h1 className=''>
-                    
+                <h1 className=''>
+
                     As-online
                 </h1>
 
                 <h3 className=''>
                     <i className="bi bi-person-circle"> </i>
-                    INICIAR SESIÒN
+                    Formulario de Regisrtro
                 </h3>
-                <label for="exampleFormControlInput1" className="form-label" onSubmit={onSubmit}>
 
-                <i className="bi bi-person-fill"> </i>
-                        Correo Electronico
+                <div className='col-6'>
+                    <label for="exampleFormControlInput1" className="form-label" onSubmit={onSubmit}>
 
-                
-                </label>
-                <input type="email" name="email" className="form-control mb-3"  placeholder="perez@gmail.com" maxLength={30} value={user.email} onChange={onInputChange}/>
+                        <i className="bi bi-person-fill"> </i>
+                        Nombre del Estudio contable
 
-                <label for="exampleFormControlInput1" className="form-label">
-                
-                <i className="bi bi-lock-fill"> </i>
+
+                    </label>
+                    <input type="text" name="nombreEC" className="form-control mb-3" placeholder="LasMalvinas" maxLength={30} value={user.nombreEC} onChange={onInputChange} />
+
+                </div>
+
+
+                <div className='col-6'>
+                    <label for="exampleFormControlInput1" className="form-label">
+
+                        <i className="bi bi-lock-fill"> </i>
+                        Correo electronico
+
+
+                    </label>
+                    <input type="email" name="email" className="form-control" placeholder="ejemplo@gmail.com" minLength={5} maxLength={20} value={user.email} onChange={onInputChange} />
+
+                </div>
+
+
+                <div className='col-4'>
+                    <label for="exampleFormControlInput1" className="form-label">
+
+                        <i className="bi bi-lock-fill"> </i>
                         Contraseña
-                
-                    
+
                     </label>
-                <input type="password" name="password" className="form-control" placeholder="******" minLength={5} maxLength={20} value={user.password} onChange={onInputChange}/>
+                    <input type="password" name="password" className="form-control" placeholder="******" minLength={5} maxLength={20} value={user.password} onChange={onInputChange} />
 
-                <label for="exampleFormControlInput1" className="form-label p-2">
-                
-                        
-                            <a href="#" className='text-white'>¿Olvidaste tu contraseña? Clic aquí</a>
-                        
-                
-                    
+
+                </div>
+
+                <div className='col-4'>
+                    <label for="exampleFormControlInput1" className="form-label">
+
+                        <i className="bi bi-lock-fill"> </i>
+                        Confirmar Contraseña
+
                     </label>
-                
-                    <div className="mb-2">
-                    <button type="submit" className="btn btn-outline-light" >Ingresar</button>
-                    </div>
-                    <hr></hr>
+                    <input type="password" name="confirmarPassword" className="form-control" minLength={5} maxLength={20} value={user.confirmarPassword} onChange={onInputChange} />
 
-                 <label for="exampleFormControlInput1" className="form-label">
-                
-                        
-                            ¿Sos nuevo? por favor
 
-                            <button type="button" className="btn btn-outline-light m-2">Registrate</button>
-                            
-                            aqui
-                
-                    
-                    </label>       
+                </div>
 
-                
+                <div className='col-4'>
+                    <label for="exampleFormControlInput1" className="form-label">
+
+                        <i className="bi bi-lock-fill"> </i>
+                        telefono
+
+                    </label>
+                    <input type="number" name="telefono" className="form-control" minLength={5} maxLength={20} value={user.telefono} onChange={onInputChange} />
+
+                </div>
+
+
+                <div className='col-6'>
+                    <label for="exampleFormControlInput1" className="form-label" onSubmit={onSubmit}>
+
+                        <i className="bi bi-person-fill"> </i>
+                        Domicilio
+
+
+                    </label>
+                    <input type="text" name="domicilio" className="form-control mb-3" maxLength={30} value={user.domicilio} onChange={onInputChange} />
+
+                </div>
+
+                <div className='col-6'>
+                    <label for="exampleFormControlInput1" className="form-label">
+
+                        <i className="bi bi-lock-fill"> </i>
+                        CUIt
+
+                    </label>
+                    <input type="number" name="cuit" className="form-control" placeholder='**-********-*' minLength={5} maxLength={20} value={user.cuit} onChange={onInputChange} />
+
+                </div>
+
+
+                <div className='col-12'>
+                    <SelectLocalidad />
+
+
+                </div>
+
+                <hr></hr>
+
+                <div className="col-6">
+                    <button type="submit" className="btn btn-outline-light" >Registrar</button>
+                </div>
+
+                <div className="col-6">
+                    <button type="submit" className="btn btn-outline-light" >Cancelar</button>
+                </div>
+
+
+
             </form>
         </div>
     )

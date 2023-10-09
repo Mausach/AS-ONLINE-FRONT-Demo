@@ -14,11 +14,15 @@ export const ForularioLogin = () => {
 
     const navigate = useNavigate();
 
+
     //borrar desp inicio 
 
     function irRegistro() {
         navigate('/registroSindicato')
     }
+
+    
+
 
     //controla los cambios que se hagan en los campos del formulario
     const onInputChange = (e) => {
@@ -93,6 +97,8 @@ export const ForularioLogin = () => {
                             ¿Sos nuevo? por favor
 
                             <button type="button" className="btn btn-outline-light m-2" onClick={irRegistro}>Registrate</button>
+
+                            
                             
                             aqui
                 

@@ -14,6 +14,8 @@ export const ForularioLogin = () => {
 
     const navigate = useNavigate();
 
+    
+
     //controla los cambios que se hagan en los campos del formulario
     const onInputChange = (e) => {
         setUser({
@@ -86,7 +88,7 @@ export const ForularioLogin = () => {
                         
                             ¿Sos nuevo? por favor
 
-                            <button type="button" className="btn btn-outline-light m-2">Registrate</button>
+                            <button type="button" className="btn btn-outline-light m-2" onClick={ir_Register}>Registrate</button>
                             
                             aqui
                 

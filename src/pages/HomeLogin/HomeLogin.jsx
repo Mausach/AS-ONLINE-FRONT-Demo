@@ -26,7 +26,7 @@ export const HomeLogin = () => {
   
 
       return (
-        <div className='text-light'>
+        <div className='text-dark'>
           {showWelcome ? (
         <div className="animate__animated animate__fadeIn">
           {/* Agrega aquí tu mensaje de bienvenida */}
@@ -37,7 +37,7 @@ export const HomeLogin = () => {
         // muestra tu contenido principal o redirige al usuario
         <>
           {/* Aquí puedes agregar tu contenido principal */}
-          <Navbar/>
+          
           <ForularioLogin/>
           {/* O puedes redirigir al usuario usando window.location.href */}
           <Footer/>

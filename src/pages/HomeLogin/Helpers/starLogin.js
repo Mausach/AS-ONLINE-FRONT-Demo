@@ -1,18 +1,20 @@
 import swal from 'sweetalert';
-//import authApi from '../../../api/authApi';
+import authApi from '../../../api/authApi';
 
 export const starLogin = async (email, password, navigate) => {
   try {
     const resp = await authApi.post('/auth/login', {
       email,
-      password,
+      password
     });
     localStorage.setItem('token', resp.data.token);
+    console.log(resp.data)
 
-    if (resp.data.rol === 'usuario') {
-      navigate('/home', { state: resp.data.email });
+    if (resp.data.rol === "Esutdio-Conable") {
+      console.log(resp.data.id)
+      navigate('/menuEC', { state: resp.data.id });
     } else {
-      navigate("/admin", { state: resp.data.name });
+      navigate("/menuSD", { state: resp.data.id });
     }
 
   } catch (error) {

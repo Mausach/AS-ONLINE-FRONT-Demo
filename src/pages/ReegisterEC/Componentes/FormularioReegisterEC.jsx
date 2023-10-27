@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 //import { starLogin } from '../helpers/StarLogin'; 
 import swal from 'sweetalert';
 import SelectLocalidad from './BuscadorSelect';
+import { starRegister } from '../Helpers/StarRegisterEC';
 
 
 export const FormularioReegisterECk = () => {
@@ -17,6 +18,7 @@ export const FormularioReegisterECk = () => {
         domicilio: "",
         cuit: "",
         localidad: "",
+        rol:"Esudio-Conable",//mandamos un rol por defec70
     });
 
     const navigate = useNavigate();
@@ -39,13 +41,13 @@ export const FormularioReegisterECk = () => {
             user.confirmarPassword.trim() === "" ||
             user.telefono.trim() === "" ||
             user.domicilio.trim() === "" ||
-            user.cuit.trim() === "" ||
-            user.localidad.trim() === "") {
+            user.cuit.trim() === "" 
+           /* user.localidad.trim() === ""*/) {
             swal("ERROR", "todos los campos son obligatorios", "error");
         } else {
 
-            swal("FUNCIONA", user.email + " " + user.password, "success");
-            //starLogin(user.email, user.password, navigate);//llama al metodo starLogin del helper 
+            //swal("FUNCIONA", user.email + " " + user.password, "success");
+            starRegister(user.nombreEC, user.email, user.password, user.rol, navigate);//llama al metodo starLogin del helper 
         }
     }
 

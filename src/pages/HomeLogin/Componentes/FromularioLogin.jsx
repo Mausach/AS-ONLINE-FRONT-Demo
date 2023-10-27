@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-//import { starLogin } from '../helpers/StarLogin'; 
+import { starLogin } from '../helpers/StarLogin'; 
 import swal from 'sweetalert';
 
 
@@ -18,7 +18,7 @@ export const ForularioLogin = () => {
     //borrar desp inicio 
 
     function irRegistro() {
-        navigate('/registroSindicato')
+        navigate('/register')
     }
 
     
@@ -41,14 +41,14 @@ export const ForularioLogin = () => {
             swal("ERROR", "todos los campos son obligatorios", "error");
         } else {
 
-            swal("FUNCIONA", user.email +" "+ user.password, "success");
-            //starLogin(user.email, user.password, navigate);//llama al metodo starLogin del helper 
+            //swal("FUNCIONA", user.email +" "+ user.password, "success");
+            starLogin(user.email, user.password, navigate);//llama al metodo starLogin del helper 
         }
     }
 
     return (
-        <div className='container-sm'>
-            <form className="p-5 p-sm-4 rounded text-center border border-white m-3" onSubmit={onSubmit}>
+        <div className='container-sm shadow p-3 mb-5 bg-white rounded'>
+            <form className="p-5 p-sm-4 rounded text-center border border-dark m-3" onSubmit={onSubmit}>
 
             <h1 className=''>
                     
@@ -80,23 +80,23 @@ export const ForularioLogin = () => {
                 <label for="exampleFormControlInput1" className="form-label p-2">
                 
                         
-                            <a href="#" className='text-white'>¿Olvidaste tu contraseña? Clic aquí</a>
+                            <a href="#" className='text-dark'>¿Olvidaste tu contraseña? Clic aquí</a>
                         
                 
                     
                     </label>
                 
                     <div className="mb-2">
-                    <button type="submit" className="btn btn-outline-light" >Ingresar</button>
+                    <button type="submit" className="btn btn-outline-primary" >Ingresar</button>
                     </div>
                     <hr></hr>
 
-                 <label for="exampleFormControlInput1" className="form-label">
+                 <label for="exampleFormControlInput1" className="form-label text-dark">
                 
                         
                             ¿Sos nuevo? por favor
 
-                            <button type="button" className="btn btn-outline-light m-2" onClick={irRegistro}>Registrate</button>
+                            <button type="button" className="btn btn-outline-primary m-2" onClick={irRegistro}>Registrate</button>
 
                             
                             

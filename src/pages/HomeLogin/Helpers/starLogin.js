@@ -10,7 +10,7 @@ export const starLogin = async (email, password, navigate) => {
     localStorage.setItem('token', resp.data.token);
     console.log(resp.data)
 
-    if (resp.data.rol === "Esutdio-Conable") {
+    if (resp.data.rol === "Estudio-Contable") {
       console.log(resp.data.id)
       navigate('/menuEC', { state: resp.data.id });
     } else {

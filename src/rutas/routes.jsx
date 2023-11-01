@@ -8,6 +8,7 @@ import { MenuSucursales } from '../pages/Sucursales/Sucursales'
 import { MenuEC } from '../pages/MenuEC/MenuEC'
 import { DeclaracionJ } from '../pages/Declaraciones/Declaracion'
 import { Pdf } from '../pages/Pdf/pdf'
+import { Admins } from '../pages/Admin/admin'
 
 
 export const AppRouter = () => {
@@ -24,6 +25,7 @@ export const AppRouter = () => {
           <Route path="/Declaraciones" element = {<DeclaracionJ/>} />
           <Route path="/Pdf" element = {<Pdf/>} />
           
+          <Route path="/admin" element = {<Admins/>} />
   
         </Routes>
       </BrowserRouter>

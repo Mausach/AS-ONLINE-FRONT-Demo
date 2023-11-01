@@ -18,7 +18,7 @@ export const FormularioReegisterECk = () => {
         domicilio: "",
         cuit: "",
         localidad: "",
-        rol:"Esudio-Conable",//mandamos un rol por defec70
+        rol:"Estudio-Contable",//mandamos un rol por defec70
     });
 
     const navigate = useNavigate();
@@ -48,12 +48,16 @@ export const FormularioReegisterECk = () => {
 
             //swal("FUNCIONA", user.email + " " + user.password, "success");
             starRegister(user.nombreEC, user.email, user.password, user.rol, navigate);//llama al metodo starLogin del helper 
-        }
+        }  
     }
+
+    const ir_login = () => {
+        navigate('/*')
+      }
 
     return (
         <div className='container-sm'>
-            <form className="p-5 p-sm-4 rounded text-center border border-white m-3 row" onSubmit={onSubmit}>
+            <form className="p-5 p-sm-4 rounded text-center border border-dark m-3 row" onSubmit={onSubmit}>
 
                 <h1 className=''>
 
@@ -66,22 +70,22 @@ export const FormularioReegisterECk = () => {
                 </h3>
 
                 <div className='col-6'>
-                    <label for="exampleFormControlInput1" className="form-label" onSubmit={onSubmit}>
+                    <label for="exampleFormControlInput1" className="form-label text-dark" onSubmit={onSubmit}>
 
                         <i className="bi bi-person-fill"> </i>
                         Nombre del Estudio contable
 
 
                     </label>
-                    <input type="text" name="nombreEC" className="form-control mb-3" placeholder="LasMalvinas" maxLength={30} value={user.nombreEC} onChange={onInputChange} />
+                    <input type="text" name="nombreEC" className="form-control mb-3" placeholder="Es. Ribadavia" maxLength={30} value={user.nombreEC} onChange={onInputChange} />
 
                 </div>
 
 
                 <div className='col-6'>
-                    <label for="exampleFormControlInput1" className="form-label">
+                    <label for="exampleFormControlInput1" className="form-label text-dark">
 
-                        <i className="bi bi-lock-fill"> </i>
+                        
                         Correo electronico
 
 
@@ -92,7 +96,7 @@ export const FormularioReegisterECk = () => {
 
 
                 <div className='col-4'>
-                    <label for="exampleFormControlInput1" className="form-label">
+                    <label for="exampleFormControlInput1" className="form-label text-dark">
 
                         <i className="bi bi-lock-fill"> </i>
                         Contraseña
@@ -104,7 +108,7 @@ export const FormularioReegisterECk = () => {
                 </div>
 
                 <div className='col-4'>
-                    <label for="exampleFormControlInput1" className="form-label">
+                    <label for="exampleFormControlInput1" className="form-label text-dark">
 
                         <i className="bi bi-lock-fill"> </i>
                         Confirmar Contraseña
@@ -116,9 +120,9 @@ export const FormularioReegisterECk = () => {
                 </div>
 
                 <div className='col-4'>
-                    <label for="exampleFormControlInput1" className="form-label">
+                    <label for="exampleFormControlInput1" className="form-label text-dark">
 
-                        <i className="bi bi-lock-fill"> </i>
+                        
                         telefono
 
                     </label>
@@ -128,9 +132,9 @@ export const FormularioReegisterECk = () => {
 
 
                 <div className='col-6'>
-                    <label for="exampleFormControlInput1" className="form-label" onSubmit={onSubmit}>
+                    <label for="exampleFormControlInput1" className="form-label text-dark" onSubmit={onSubmit}>
 
-                        <i className="bi bi-person-fill"> </i>
+                        
                         Domicilio
 
 
@@ -140,13 +144,13 @@ export const FormularioReegisterECk = () => {
                 </div>
 
                 <div className='col-6'>
-                    <label for="exampleFormControlInput1" className="form-label">
+                    <label for="exampleFormControlInput1" className="form-label text-dark">
 
-                        <i className="bi bi-lock-fill"> </i>
+                        
                         CUIt
 
                     </label>
-                    <input type="number" name="cuit" className="form-control" placeholder='**-********-*' minLength={5} maxLength={20} value={user.cuit} onChange={onInputChange} />
+                    <input type="number" name="cuit" className="form-control" placeholder='N° de cuit sin -' minLength={5} maxLength={20} value={user.cuit} onChange={onInputChange} />
 
                 </div>
 
@@ -160,11 +164,11 @@ export const FormularioReegisterECk = () => {
                 <hr></hr>
 
                 <div className="col-6">
-                    <button type="submit" className="btn btn-outline-light" >Registrar</button>
+                    <button type="submit" className="btn btn-outline-dark" >Registrar</button>
                 </div>
 
                 <div className="col-6">
-                    <button type="submit" className="btn btn-outline-light" >Cancelar</button>
+                    <button className="btn btn-outline-dark" onClick={ir_login} >Cancelar</button>
                 </div>
 
 

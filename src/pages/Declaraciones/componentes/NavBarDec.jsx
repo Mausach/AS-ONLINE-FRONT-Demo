@@ -1,15 +1,15 @@
-import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { Nav } from 'react-bootstrap';
-import { AltaSucursalModal } from './AltaSucursalModal';
+import Container from 'react-bootstrap/Container';
+
 
 //import Modal from 'react-bootstrap/Modal';
 
 
-export const NavBarSuc =( {Empresa} ) => {//se podria recibir nombre i logo del es7udio con7able para el navbar
+export const NavBarDec =() => {//se podria recibir nombre i logo del es7udio con7able para el navbar
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -20,12 +20,12 @@ export const NavBarSuc =( {Empresa} ) => {//se podria recibir nombre i logo del 
 
   const handleCloseModal = () => setShowModal(false);
   const handleShowModal = () => setShowModal(true);
-  console.log("empesaID:", Empresa.id);
+  //console.log("empesaID:", Empresa.id);
   
 
   return (
     <>     
-      <Navbar className="bg-body-tertiary" fixed="top" bg="dark" data-bs-theme="dark">
+      <Navbar className="bg-body-tertiary mb-5" fixed="top" bg="dark" data-bs-theme="dark">
         <Container>
         <Button variant="outline-light" onClick={handleShow}>
         Menu
@@ -33,7 +33,7 @@ export const NavBarSuc =( {Empresa} ) => {//se podria recibir nombre i logo del 
           <Navbar.Brand  href="#home" className="ms-auto">
             
             
-            {Empresa.nombrefantasia}
+            {"Sucursal"}
             <img
               alt=""
               src="/img/logo.svg"
@@ -58,24 +58,25 @@ export const NavBarSuc =( {Empresa} ) => {//se podria recibir nombre i logo del 
         <hr></hr>
         <Nav.Link>
 
-        <Button className='m-2' variant="outline-light" onClick={handleShowModal}>
-          Alta de Sucursal
+        <Button className='m-2' variant="outline-light">
+          Alta de Empleado
           </Button>
           
           </Nav.Link>
 
-      <Nav.Link href="#features">
+      <Nav.Link >
 
       <Button className='m-2' variant="outline-light">
         ver declaracioner realizadas
         </Button>
+
+        solo demo
 
         </Nav.Link> 
 
         </Offcanvas.Body>
       </Offcanvas>
 
-      <AltaSucursalModal showModal={showModal} handleCloseModal={handleCloseModal} Empresa={Empresa}/>
       
     </>
   );

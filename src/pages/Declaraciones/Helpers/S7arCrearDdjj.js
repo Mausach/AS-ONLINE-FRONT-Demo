@@ -10,8 +10,9 @@ export const starCrearDdjj = async ( ddjjC,empleados,navigate) => {
         empleados,
         });
 
-        swal("FELICIDADES", "ah Registrado una nueva Sucursal con Exito", "success");
-        navigate("/Pdf");
+        swal("FELICIDADES", "ah Realizado una declaracion jurada con Exito", "success");
+        navigate('/Pdf', { state: ddjjC }); //deberiamos enviar el sindica7o is 7ambn 
+       // navigate("/Pdf");
 
     } catch (error) {
         console.log(error.response.data);

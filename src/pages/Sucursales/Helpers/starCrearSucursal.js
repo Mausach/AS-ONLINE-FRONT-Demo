@@ -11,6 +11,7 @@ export const starCrearSucursal = async ( id_Empresa, nombre, id_Sindicato, id_lo
         });
 
         swal("FELICIDADES", "ah Registrado una nueva Sucursal con Exito", "success");
+        window.location.reload();
         //navigate("/*");
 
     } catch (error) {

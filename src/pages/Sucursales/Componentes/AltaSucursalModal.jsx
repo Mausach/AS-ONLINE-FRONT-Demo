@@ -21,8 +21,8 @@ export const AltaSucursalModal =({ showModal, handleCloseModal, Empresa })=> {
 
 //selec7 del sindica7o
 const options = [
-  { value: 1, label: 'Sindica7o sgo del es7ero' },
-{ value: 2, label: 'Sindica7o la banda' },
+  { value: 1, label: 'Sindicato sgo del estero' },
+{ value: 2, label: 'Sindicato la banda' },
 // Agrega más opciones según sea necesario
   // Agrega más provincias según sea necesario
 ];

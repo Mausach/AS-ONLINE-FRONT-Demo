@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Col, Container, Pagination, Row } from 'react-bootstrap';
-
+import Alert from 'react-bootstrap/Alert';
 import { cargarEmpresasDB } from './Helpers/cargarEmpresasDB';
 import { CardEmpresas } from './Componentes/CardEmpresas';
 import { BrandMenu } from './Componentes/Navbar';
@@ -57,18 +57,26 @@ export const MenuEC = () => {
         return (
           <div>
               <Container className='mt-5 p-3'>
-                  <Row>
-                      {EmpresasPagina.map((Empresa) => {
-                              return <Col key={Empresa.id} >
-                                <CardEmpresas Empresa={Empresa} navigate={navigate} />
-                                  
-                              </Col>
-                          
-                      })}
-                  </Row>
-                  <Row>
-                      {Paginacion()}
-                  </Row>
+              {EmpresasPagina.length > 0 ? ( // Check if EmpresasPagina has items
+          <div>
+            <Row>
+              {EmpresasPagina.map((Empresa) => (
+                <Col key={Empresa.id}>
+                  <CardEmpresas Empresa={Empresa} navigate={navigate} />
+                </Col>
+              ))}
+            </Row>
+            <Row>
+              {Paginacion()}
+            </Row>
+          </div>
+        ) : (
+          <Alert variant='danger'>
+            <h5>No hay empresas disponibles, por favor dirijase al menu para dar de alta una empresa
+        </h5>
+            
+        </Alert>
+        )}
               </Container>
           </div>
           )
@@ -90,7 +98,18 @@ export const MenuEC = () => {
         }
         
 
-    }, [usuarioID]);
+    }, []);
+
+    /*
+     useEffect(() => {
+    if (condicionParaRecargar) {
+      window.location.reload();
+    }
+  }, [condicionParaRecargar]);
+
+  return <div>Contenido de tu componente</div>;
+}
+      */
       
 
 
@@ -99,6 +118,7 @@ export const MenuEC = () => {
     <div className='text-light'>
       <BrandMenu usuarioID={usuarioID}/>
       {cargarcards_Empresas()}
+      
       <div>
        
       </div>

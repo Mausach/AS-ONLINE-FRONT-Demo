@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import { Col, Row } from 'react-bootstrap';
+import { AltaDeEmpleado } from './AltaDeEmpleado';
 //import { guardarDatosEnCarrito } from '../helpers/OperacionesDelCarrito';
 
 export const CardSucursales = ({ Sucursal, navigate, Empresa }) => {
@@ -16,6 +17,11 @@ export const CardSucursales = ({ Sucursal, navigate, Empresa }) => {
 
         navigate('/Declaraciones', { state: datosEmpSuc })
       }
+
+      const [showModal, setShowModal] = useState(false);
+
+  const handleCloseModal = () => setShowModal(false);
+  const handleShowModal = () => setShowModal(true);
 
     return (
         <div>
@@ -31,11 +37,14 @@ export const CardSucursales = ({ Sucursal, navigate, Empresa }) => {
           <Col sm={8}>
             <Button className='m-2' variant="dark" onClick={ir_Declaracion}>DDJJ</Button>
             <Button className='m-2' variant="dark">Baja de empleado</Button>
-            <Button className='m-2' variant="outline-success">Alta de empleado</Button>
+            <Button className='m-2' variant="outline-success" onClick={handleShowModal}>Alta de empleado</Button>
           </Col>
         </Row>
       </Card.Body>
     </Card>
+
+    <AltaDeEmpleado showModal={showModal} handleCloseModal={handleCloseModal} Sucursal={Sucursal}/>
+      
 
         </div>
     )

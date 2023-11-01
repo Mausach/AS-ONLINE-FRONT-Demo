@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { cargar_empleados_x_sucursalDB } from './Helpers/Cargar_empleado_x_sucursal';
 import { TablaDeclaraciones } from './componentes/TablaDeclaraciones';
 import MyPDFViewer from './componentes/VoletaPdf';
+import { NavBarDec } from './componentes/NavBarDec';
 
 
 export const DeclaracionJ = () => {
@@ -46,8 +47,7 @@ export const DeclaracionJ = () => {
 
   return (
     <div className='text-dark container-fluid'>
-      <h1>cuerpo de la 7abla de empleados</h1>
-<h2>{datosEmpSuc.sucursal.id}</h2>
+      <NavBarDec/>
 {CargarTabla()}
 
 

@@ -9,10 +9,10 @@ export const TablaDeclaraciones = ({ cargarEmpleado, empresa }) => {
   //state para las declaraciones juradas Cabezera
   const fechaEspecifica = new Date(2013, 9, 1); // Año 2013, mes 10 (octubre, ya que los meses se indexan desde 0), día 1
   
+
   const navigate = useNavigate();
   //primero se ejecu7a i guarda la cabezera i despues cada ddjj
- const [ddjjC, setDdjjC] = useState({
- });
+ //const [ddjjC, setDdjjC] = useState({});
 
     //state para las declaraciones juradas
   const [ddjj, setDdjj] = useState({});
@@ -56,12 +56,20 @@ const nuevosDatos = {
 };
 
 // Carga los nuevos datos en el estado ddjjC
-setDdjjC(nuevosDatos);
+//setDdjjC(nuevosDatos);
   
   
-  console.log(ddjjC,ddjj)
-  //aqui hai que mandar el/los obje7os al backend
-starCrearDdjj(ddjjC,ddjjArray,navigate);
+  console.log(nuevosDatos,ddjj)
+
+  if (cargarEmpleado.length > 0) {
+    //aqui hai que mandar el/los obje7os al backend
+starCrearDdjj(nuevosDatos,ddjjArray,navigate);
+    
+  } else {
+    swal("ERROR", "no existen empleados para declarar", "error");
+  }
+
+  
 
 } else {
   swal("ERROR", "Faltan sueldos por declarar", "error");
@@ -115,7 +123,7 @@ const onInputChange = (e, empleadoId) => {
 
     return (
       <div>
-        <Container>
+        <Container className='justify-content-center align-items-center p-5 mt-5 p-sm-4'>
         <Form onSubmit={onSubmit} className='shadow p-3 mb-5 bg-white rounded'> 
           <Table striped bordered hover variant="light" responsive="sm" className="text-dark justify-content-center align-items-center p-5 p-sm-4 border border-dark">
   

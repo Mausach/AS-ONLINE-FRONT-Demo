@@ -10,6 +10,7 @@ export const cargarSucursalesDB = async (setCargarSucursales, navigate, empresaI
 
         if (Array.isArray(resp.data.sucursales)) {//pregun7o si lo que 7rae es un arreglo
             setCargarSucursales(resp.data.sucursales);
+            console.error(resp.data.msg);
         } else {
             console.error("Los datos de empresas no son un array:", resp.data);
         }

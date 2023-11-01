@@ -8,7 +8,7 @@ import { MenuSucursales } from '../pages/Sucursales/Sucursales'
 import { MenuEC } from '../pages/MenuEC/MenuEC'
 import { DeclaracionJ } from '../pages/Declaraciones/Declaracion'
 import { Pdf } from '../pages/Pdf/pdf'
-import { Admins } from '../pages/Admin/admin'
+import { Admins } from '../pages/Admin/Admin'
 
 
 export const AppRouter = () => {

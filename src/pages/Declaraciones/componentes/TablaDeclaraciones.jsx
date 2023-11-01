@@ -61,6 +61,7 @@ const nuevosDatos = {
   
   console.log(nuevosDatos,ddjj)
 
+  //con7rolamos que 7enga empleados
   if (cargarEmpleado.length > 0) {
     //aqui hai que mandar el/los obje7os al backend
 starCrearDdjj(nuevosDatos,ddjjArray,navigate);

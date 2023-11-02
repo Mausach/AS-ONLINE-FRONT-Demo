@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-import { starLogin } from '../helpers/StarLogin'; 
 import swal from 'sweetalert';
+import { starLogin } from '../helpers/starLogin';
 
 
 export const ForularioLogin = () => {

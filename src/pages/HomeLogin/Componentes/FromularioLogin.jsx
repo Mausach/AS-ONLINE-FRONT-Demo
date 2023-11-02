@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import swal from 'sweetalert';
-import { starLogin } from '../helpers/starLogin';
+import { starLogin } from '../Helpers/StarLogin';
 
 
 export const ForularioLogin = () => {
@@ -22,8 +22,6 @@ export const ForularioLogin = () => {
     }
 
     
-
-
     //controla los cambios que se hagan en los campos del formulario
     const onInputChange = (e) => {
         setUser({

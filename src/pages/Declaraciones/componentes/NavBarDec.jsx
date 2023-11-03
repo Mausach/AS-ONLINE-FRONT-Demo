@@ -6,28 +6,33 @@ import { Nav } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 
 
-//import Modal from 'react-bootstrap/Modal';
-
 
 export const NavBarDec =() => {//se podria recibir nombre i logo del es7udio con7able para el navbar
+  
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  //para modal
+  //para modal de al7a de empleado
   const [showModal, setShowModal] = useState(false);
 
   const handleCloseModal = () => setShowModal(false);
   const handleShowModal = () => setShowModal(true);
-  //console.log("empesaID:", Empresa.id);
+  
   
 
   return (
     <>     
       <Navbar className="bg-body-tertiary mb-5" fixed="top" bg="dark" data-bs-theme="dark">
         <Container>
-        <Button variant="outline-light" onClick={handleShow}>
+        <Button className='m-2' variant="outline-light">
+        Volver
+      </Button>
+
+
+
+        <Button className='m-2' variant="outline-light" onClick={handleShow}>
         Menu
       </Button>
           <Navbar.Brand  href="#home" className="ms-auto">
@@ -70,9 +75,13 @@ export const NavBarDec =() => {//se podria recibir nombre i logo del es7udio con
         ver declaracioner realizadas
         </Button>
 
-        solo demo
+        </Nav.Link>
 
-        </Nav.Link> 
+        <Nav.Link >
+
+        Menu solo de demo
+
+        </Nav.Link>  
 
         </Offcanvas.Body>
       </Offcanvas>

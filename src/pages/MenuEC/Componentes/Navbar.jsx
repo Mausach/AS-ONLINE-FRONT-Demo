@@ -8,7 +8,7 @@ import { AltaEmpresaModal } from './AltaEmpresaModal';
 //import Modal from 'react-bootstrap/Modal';
 
 
-export const BrandMenu =( {usuarioID} ) => {//se podria recibir nombre i logo del es7udio con7able para el navbar
+export const BrandMenu =( {usuarioID,setNuevaEmpresaCargada} ) => {//se podria recibir nombre i logo del es7udio con7able para el navbar
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -26,9 +26,17 @@ export const BrandMenu =( {usuarioID} ) => {//se podria recibir nombre i logo de
     <>     
       <Navbar className="bg-body-tertiary" fixed="top" bg="dark" data-bs-theme="dark">
         <Container>
-        <Button variant="outline-light" onClick={handleShow}>
+            
+        <Button className='m-2' variant="outline-light" >
+        Salir
+      </Button>
+
+
+        <Button className='m-2' variant="outline-light" onClick={handleShow}>
         Menu
       </Button>
+            
+        
           <Navbar.Brand  href="#home" className="ms-auto">
             
             Esstudio Contable
@@ -75,7 +83,7 @@ export const BrandMenu =( {usuarioID} ) => {//se podria recibir nombre i logo de
       </Offcanvas>
 
 
-      <AltaEmpresaModal showModal={showModal} handleCloseModal={handleCloseModal} usuarioID={usuarioID}/>
+      <AltaEmpresaModal showModal={showModal} handleCloseModal={handleCloseModal} usuarioID={usuarioID} setNuevaEmpresaCargada={setNuevaEmpresaCargada}/>
     </>
   );
 }

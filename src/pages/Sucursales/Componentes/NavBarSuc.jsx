@@ -27,7 +27,12 @@ export const NavBarSuc =( {Empresa} ) => {//se podria recibir nombre i logo del 
     <>     
       <Navbar className="bg-body-tertiary" fixed="top" bg="dark" data-bs-theme="dark">
         <Container>
-        <Button variant="outline-light" onClick={handleShow}>
+
+        <Button className='m-2' variant="outline-light" >
+        Volver
+      </Button>
+
+        <Button className='m-2' variant="outline-light" onClick={handleShow}>
         Menu
       </Button>
           <Navbar.Brand  href="#home" className="ms-auto">

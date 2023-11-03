@@ -8,7 +8,7 @@ import { starCrearEmpresa } from '../Helpers/starCrearEmpresa';
 import { useNavigate } from 'react-router-dom';
 
 
-export const AltaEmpresaModal =({ showModal, handleCloseModal, usuarioID })=> {
+export const AltaEmpresaModal =({ showModal, handleCloseModal, usuarioID, setNuevaEmpresaCargada })=> {
 
   //state para usuario e email del usuario
   const [empresa, setEmpresa] = useState({
@@ -45,6 +45,7 @@ const onSubmit = (e) => {//solo con7rolamos los campos que de momen7o 7enemos en
   ) {
     swal("ERROR", "Todos los campos son obligatorios", "error");
   } else {
+    
     console.log(empresa.id_Esutdio_Conable);
     // Realiza la llamada al método que valida el CUIT aquí
     // ...
@@ -54,8 +55,13 @@ const onSubmit = (e) => {//solo con7rolamos los campos que de momen7o 7enemos en
       empresa.razonsocial,
       empresa.nombrefantasia,
       empresa.telefono,
-      navigate
+      navigate,
+      setNuevaEmpresaCargada
     );
+
+    handleCloseModal()
+
+    
   }
 }
 

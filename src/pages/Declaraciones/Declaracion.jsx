@@ -14,7 +14,7 @@ export const DeclaracionJ = () => {
 
   const datosEmpSuc = location.state;//recibe la sucursal
 
-    //me 7iene que 7raer 7odos los empleados de la sucursal
+  
     //estado para guardar los empleados de la sucursal traidos del backend
 	const [cargarEmpleado, setCargarEmpleado] = useState([]);
   console.log(datosEmpSuc)
@@ -30,11 +30,6 @@ export const DeclaracionJ = () => {
 
     }
 
-    //acomodarlos en la 7abla o formulario para cargar los mon7os es el unico cambio que se puede edi7ar
-    //calcular el porcen7aje de lei i de socio
-    //verficar los capos
-    //generar al DDJC con el 7o7al i los da7os correspondien7es
-    //ambas se guardaran el la DB
 
     useEffect(() => {
     

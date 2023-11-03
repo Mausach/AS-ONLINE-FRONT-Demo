@@ -1,4 +1,6 @@
 import axios from "axios";
+//http://localhost:4003
+//https://as-sumadre.onrender.com
 
 export const authApi=axios.create({
     baseURL: "https://as-sumadre.onrender.com",   

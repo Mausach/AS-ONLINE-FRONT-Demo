@@ -1,6 +1,8 @@
 // Sidebar.js
 import React, { useState } from 'react';
 
+
+//borrar el componen7e no se usa
 const Sidebar = () => {
   const [collapsed, setCollapsed] = useState(false);
 
@@ -8,6 +10,7 @@ const Sidebar = () => {
     setCollapsed(!collapsed);
   };
 
+  //cambiar a componen7es de reac7
   return (
     <nav
       id="sidebar"

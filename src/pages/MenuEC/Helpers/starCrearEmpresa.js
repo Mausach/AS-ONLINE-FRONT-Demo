@@ -12,9 +12,7 @@ export const starCrearEmpresa = async ( id_Esutdio_Conable, cuit, razonsocial, n
         });
 
         swal("FELICIDADES", "ah Registrado una empresa con Exito", "success");
-       // window.location.reload();
-        //navigate('/menuEC', { state: id_Esutdio_Conable });
-        //navigate("/*");
+       
         setNuevaEmpresaCargada(true)
 
     } catch (error) {

@@ -9,7 +9,7 @@ import { AltaSucursalModal } from './AltaSucursalModal';
 //import Modal from 'react-bootstrap/Modal';
 
 
-export const NavBarSuc =( {Empresa} ) => {//se podria recibir nombre i logo del es7udio con7able para el navbar
+export const NavBarSuc =( {Empresa,setNuevaSucursalCargada} ) => {//se podria recibir nombre i logo del es7udio con7able para el navbar
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -79,8 +79,8 @@ export const NavBarSuc =( {Empresa} ) => {//se podria recibir nombre i logo del 
 
         </Offcanvas.Body>
       </Offcanvas>
-
-      <AltaSucursalModal showModal={showModal} handleCloseModal={handleCloseModal} Empresa={Empresa}/>
+{/*abre el modal para crear la sucursal*/}
+      <AltaSucursalModal showModal={showModal} handleCloseModal={handleCloseModal} Empresa={Empresa} setNuevaSucursalCargada={setNuevaSucursalCargada}/>
       
     </>
   );

@@ -9,7 +9,7 @@ import { starCrearSucursal } from '../Helpers/starCrearSucursal';
 //import { starCrearEmpresa } from '../Helpers/starCrearEmpresa';
 
 
-export const AltaSucursalModal =({ showModal, handleCloseModal, Empresa })=> {
+export const AltaSucursalModal =({ showModal, handleCloseModal, Empresa,setNuevaSucursalCargada })=> {
 
   //state para sucursales
   const [sucursal, setSucursal] = useState({ //se debe modificar los da7os de la sucursal dado a que el modlo no es7a 7erminado
@@ -68,7 +68,10 @@ const onSubmit = (e) => {//solo con7rolamos los campos que de momen7o 7enemos en
       sucursal.nombre,
       sucursal.id_Sindicato,
       sucursal.id_localidad,
+      setNuevaSucursalCargada
     );
+
+    handleCloseModal()
   }
 }
 
@@ -159,7 +162,7 @@ const onSubmit = (e) => {//solo con7rolamos los campos que de momen7o 7enemos en
       options={options}
       isSearchable={true} // Activa la funcionalidad de búsqueda
       name='id_Sindicato'
-      placeholder="sindica7o..."
+      placeholder="sindicato..."
       className="text-dark"
       
     />

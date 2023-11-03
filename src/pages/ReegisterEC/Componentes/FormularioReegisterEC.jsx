@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
-//import { starLogin } from '../helpers/StarLogin'; 
+import { useNavigate } from 'react-router-dom'; 
 import swal from 'sweetalert';
 import SelectLocalidad from './BuscadorSelect';
 import { starRegister } from '../Helpers/StarRegisterEC';
@@ -18,7 +17,7 @@ export const FormularioReegisterECk = () => {
         domicilio: "",
         cuit: "",
         localidad: "",
-        rol:"Estudio-Contable",//mandamos un rol por defec70
+        rol:"Estudio-Contable",//mandamos un rol por defaul7 en el back
     });
 
     const navigate = useNavigate();
@@ -42,19 +41,19 @@ export const FormularioReegisterECk = () => {
             user.telefono.trim() === "" ||
             user.domicilio.trim() === "" ||
             user.cuit.trim() === "" 
-           /* user.localidad.trim() === ""*/) {
+           ) {
             swal("ERROR", "todos los campos son obligatorios", "error");
         } else {
 
-            //swal("FUNCIONA", user.email + " " + user.password, "success");
             starRegister(user.nombreEC, user.email, user.password, user.rol, navigate);//llama al metodo starLogin del helper 
         }  
     }
 
-    const ir_login = () => {
+    const ir_login = () => {//redirije al login
         navigate('/*')
       }
 
+      //cambiar por form reac7 boos7rap
     return (
         <div className='container-sm'>
             <form className="p-5 p-sm-4 rounded text-center border border-dark m-3 row" onSubmit={onSubmit}>

@@ -1,7 +1,7 @@
 import React from 'react';
 import Barcode from 'react-barcode';
 
-
+//aqui dbuja el codigo de barra
 const CodigoDeBarra = () => {
     return (
       <div>

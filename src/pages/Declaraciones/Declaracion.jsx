@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom';
 import { cargar_empleados_x_sucursalDB } from './Helpers/Cargar_empleado_x_sucursal';
 import { TablaDeclaraciones } from './componentes/TablaDeclaraciones';
-import MyPDFViewer from './componentes/VoletaPdf';
+import MyPDFViewer from './componentes/VoletaPdf';//hai que borrar el componen7e por que no lo usamos
 import { NavBarDec } from './componentes/NavBarDec';
 
 

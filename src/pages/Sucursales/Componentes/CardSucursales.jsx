@@ -4,7 +4,6 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import { Col, Row } from 'react-bootstrap';
 import { AltaDeEmpleado } from './AltaDeEmpleado';
-//import { guardarDatosEnCarrito } from '../helpers/OperacionesDelCarrito';
 
 export const CardSucursales = ({ Sucursal, navigate, Empresa }) => {
 
@@ -15,6 +14,7 @@ export const CardSucursales = ({ Sucursal, navigate, Empresa }) => {
         sucursal: Sucursal,
       };
 
+      //naviga7ion para ir a las declaraciones 
         navigate('/Declaraciones', { state: datosEmpSuc })
       }
 

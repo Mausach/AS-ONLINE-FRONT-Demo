@@ -8,7 +8,7 @@ export const Pdf = () => {
 
   const location = useLocation();
 
-  const ddjjC = location.state;//recibe alusuario
+  const ddjjC = location.state;//recibe la cabezera o resumen
 
   return (
     <div className='text-dark container-fluid'>

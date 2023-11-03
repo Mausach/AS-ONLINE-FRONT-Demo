@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import 'animate.css/animate.min.css'; // Importa los estilos de animate.css
-
 import '../HomeLogin/home.css'
 import { ForularioLogin } from './Componentes/FromularioLogin';
-import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
 
 
@@ -29,7 +27,7 @@ export const HomeLogin = () => {
         <div className='text-dark'>
           {showWelcome ? (
         <div className="animate__animated animate__fadeIn">
-          {/* Agrega aquí tu mensaje de bienvenida */}
+          
           <h1 className='tamañoAnimacion'>As-Online</h1>
         </div>
       ) : (
@@ -39,7 +37,7 @@ export const HomeLogin = () => {
           {/* Aquí puedes agregar tu contenido principal */}
           
           <ForularioLogin/>
-          {/* O puedes redirigir al usuario usando window.location.href */}
+          
           <Footer/>
           
         </>

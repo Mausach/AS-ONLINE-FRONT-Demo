@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { Nav } from 'react-bootstrap';
 import { AltaEmpresaModal } from './AltaEmpresaModal';
-//import Modal from 'react-bootstrap/Modal';
+
 
 
 export const BrandMenu =( {usuarioID,setNuevaEmpresaCargada} ) => {//se podria recibir nombre i logo del es7udio con7able para el navbar
@@ -14,7 +14,7 @@ export const BrandMenu =( {usuarioID,setNuevaEmpresaCargada} ) => {//se podria r
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  //para modal
+  //para modal al7a de empresa
   const [showModal, setShowModal] = useState(false);
 
   const handleCloseModal = () => setShowModal(false);
@@ -23,7 +23,7 @@ export const BrandMenu =( {usuarioID,setNuevaEmpresaCargada} ) => {//se podria r
   
 
   return (
-    <>     
+    <>     {/*navbar superior*/}
       <Navbar className="bg-body-tertiary" fixed="top" bg="dark" data-bs-theme="dark">
         <Container>
             
@@ -55,7 +55,7 @@ export const BrandMenu =( {usuarioID,setNuevaEmpresaCargada} ) => {//se podria r
       </Navbar>
 
       
-
+{/*navbar la7eral*/}
       <Offcanvas data-bs-theme="dark" show={show} onHide={handleClose}>
         <Offcanvas.Header closeButton>
           <Offcanvas.Title className=''>Menu</Offcanvas.Title>

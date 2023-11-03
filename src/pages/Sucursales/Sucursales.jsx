@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom';
 import Alert from 'react-bootstrap/Alert';
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import { Container } from 'react-bootstrap';
 import { CardSucursales } from './Componentes/CardSucursales';
 import { cargarSucursalesDB } from './Helpers/cargarSucursalesDB';
@@ -19,31 +16,11 @@ export const MenuSucursales = () => {
   //estado para guardar las sucursales traidos del backend
   const [cargarSucursales, setCargarSucursales] = useState([]);
 
+  const [nuevaSucursalCargada, setNuevaSucursalCargada] = useState(false);
+
   const navigate = useNavigate();
 
   //funcion que dibujara las cards
-  /*
-  const cargarcards_Sucursales = () => {
-    return (
-      <div>
-          <Container className='mt-5 p-3'>
-              <Row>
-                  {cargarSucursales.map((Sucursal) => {
-                          return <Col key={Sucursal.id} >
-                            <CardSucursales Sucursal={Sucursal} navigate={navigate} />
-                              
-                          </Col>
-                      
-                  })}
-              </Row>
-              <Row>
-                  {Paginacion()}
-              </Row>
-          </Container>
-      </div>
-      )
-  }*/
-
   const cargarcards_Sucursales = () => {
   // Organiza las sucursales en grupos según el campo "id_sindicato"
   const gruposSindicatos = {};
@@ -61,7 +38,7 @@ export const MenuSucursales = () => {
   // Checkea si hai algo en sucursales
   const noSucursales = Object.keys(gruposSindicatos).length === 0;
 
-  // Define un objeto para mapear los ID de sindicatos a nombres
+  // Define un objeto para mapear los ID de sindicatos a nombres es7o depende de los sindi que hai en el sis7ema i se 7raen de la DB
   const nombresSindicatos = {
     '1': 'Sindicato sgo del estero',
     '2': 'Sindicato la banda',
@@ -100,38 +77,39 @@ export const MenuSucursales = () => {
 };
 
 
-  useEffect(() => {
 
-    // setTimeout(() => {
-      //   setLoading(false);
-     //}, 2000);
-     //fin de animacion cargando
+ useEffect(() => {
+  if (nuevaSucursalCargada) {
+    cargarSucursalesDB(setCargarSucursales, navigate, Empresa.id);
+    setNuevaSucursalCargada(false);
+  } else {
+    cargarSucursalesDB(setCargarSucursales, navigate, Empresa.id);
+  }
+/* lo de abajo es para el paginado por si le ponemos
+  // Calcula el número de páginas actualizado
+  const newNumPaginas = Math.ceil(cargarEmpresas.length / empresasPorPagina);
 
-     //EstadoPago(navigate)
-
-     if (Empresa.id) {
-       cargarSucursalesDB(setCargarSucursales, navigate, Empresa.id);
-     }
-
-     /*
-     useEffect(() => {
-    if (condicionParaRecargar) {
-      window.location.reload();
+  // Si el número de páginas ha cambiado, verifica si debes actualizar el número de página actual
+  if (newNumPaginas !== numPaginas) {
+    if (numPage > newNumPaginas) {
+      // Si el número de página actual es mayor que el nuevo número de páginas, redirige a la última página
+      setNumPage(newNumPaginas);
     }
-  }, [condicionParaRecargar]);
+    setNumPaginas(newNumPaginas);
+  }
 
-  return <div>Contenido de tu componente</div>;
-}
-      */
-     
-
- }, []);
+  // Verifica si la página actual está llena y si hay más empresas que no se muestran
+  if (EmpresasPagina.length === empresasPorPagina && startIndex + empresasPorPagina < cargarEmpresas.length) {
+    setNumPage(numPage + 1); // Incrementa el número de página
+    
+  }*/
+}, [nuevaSucursalCargada]);
 
   return (
     <div className='text-light container-fluid'>
       
       <h1>{Empresa.nombrefantasia}</h1>
-      <NavBarSuc Empresa={Empresa}/>
+      <NavBarSuc Empresa={Empresa} setNuevaSucursalCargada={setNuevaSucursalCargada}/>
       
       {cargarcards_Sucursales()}
       

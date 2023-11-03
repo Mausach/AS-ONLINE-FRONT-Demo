@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import Select from 'react-select';
 
+// cambiar por una api de localidades
 const options = [
   { value: 'La Banda', label: 'La Banda' },
   { value: 'Frias', label: 'Frias' },
   { value: 'Ojo de agua', label: 'Ojo de agua' },
-  // Agrega más opciones según sea necesario
+  
 ];
 
 function SelectLocalidad() {

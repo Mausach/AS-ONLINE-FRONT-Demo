@@ -1,17 +1,16 @@
 import React, { useState } from 'react';
 import Select from 'react-select';
 
+//selec7or de localidad hacerlo con una api
 const options = [
     { value: 1, label: 'La Banda' },
   { value: 2, label: 'Frias' },
   { value: 3, label: 'Ojo de agua' },
-  // Agrega más opciones según sea necesario
-    // Agrega más provincias según sea necesario
+  
   ];
   
-  // Ahora, el array options contiene todas las provincias de Argentina
   
-
+//selecciona la localdad
 function SelectLocalidades({sucursal,setSucursal}) {
   const [selectedOption, setSelectedOption] = useState(null);
 

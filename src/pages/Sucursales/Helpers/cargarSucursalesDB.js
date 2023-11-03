@@ -1,6 +1,6 @@
 import swal from 'sweetalert';
 import authApi from '../../../api/authApi';
-//import authApi from '../../../api/authApi';
+
 
 
 //cargarEmpresas desde la DB
@@ -15,9 +15,6 @@ export const cargarSucursalesDB = async (setCargarSucursales, navigate, empresaI
             console.error("Los datos de empresas no son un array:", resp.data);
         }
 
-
-        //console.log(resp.data.empresas)
-        //setCargarEmpresas(resp.data);
     } catch (error) {
         console.log(error.response.data.msg);
         swal("ERROR", error.response.data.msg, "error");;

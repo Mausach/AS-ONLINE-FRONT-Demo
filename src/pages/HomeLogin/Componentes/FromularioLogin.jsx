@@ -12,10 +12,8 @@ export const ForularioLogin = () => {
         password: "",
     });
 
-    const navigate = useNavigate();
+    const navigate = useNavigate();//navegar a o7ra ru7a
 
-
-    //borrar desp inicio 
 
     function irRegistro() {
         navigate('/register')
@@ -39,12 +37,13 @@ export const ForularioLogin = () => {
             swal("ERROR", "todos los campos son obligatorios", "error");
         } else {
 
-            //swal("FUNCIONA", user.email +" "+ user.password, "success");
             starLogin(user.email, user.password, navigate);//llama al metodo starLogin del helper 
         }
     }
 
-    return (
+    
+
+    return (//cambiar a reac7 boos7rap el form
         <div className='container-sm shadow p-3 mb-5 bg-white rounded'>
             <form className="p-5 p-sm-4 rounded text-center border border-dark m-3" onSubmit={onSubmit}>
 

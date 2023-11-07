@@ -136,8 +136,8 @@ const numPaginas = Math.ceil((Array.isArray(cargarEmpresas) ? cargarEmpresas.len
 
   return (
     <div className='text-light'>
-      <BrandMenu usuarioID={usuarioID} setNuevaEmpresaCargada={setNuevaEmpresaCargada}/>
-      {cargarcards_Empresas()}
+      <BrandMenu usuarioID={usuarioID} setNuevaEmpresaCargada={setNuevaEmpresaCargada} navigate={navigate}/>
+      {cargarcards_Empresas()} 
       
       <div>
        

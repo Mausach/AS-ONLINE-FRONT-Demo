@@ -131,7 +131,7 @@ export const MenuSucursales = () => {
     <div className='text-light container-fluid'>
       
       <h1>{Empresa.nombrefantasia}</h1>
-      <NavBarSuc Empresa={Empresa}/>
+      <NavBarSuc Empresa={Empresa} navegate={navigate}/>
       
       {cargarcards_Sucursales()}
       

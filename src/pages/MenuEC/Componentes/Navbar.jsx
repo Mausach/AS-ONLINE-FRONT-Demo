@@ -5,10 +5,11 @@ import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { Nav } from 'react-bootstrap';
 import { AltaEmpresaModal } from './AltaEmpresaModal';
+
 //import Modal from 'react-bootstrap/Modal';
 
 
-export const BrandMenu =( {usuarioID,setNuevaEmpresaCargada} ) => {//se podria recibir nombre i logo del es7udio con7able para el navbar
+export const BrandMenu =( {usuarioID,setNuevaEmpresaCargada,navigate} ) => {//se podria recibir nombre i logo del es7udio con7able para el navbar
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -20,6 +21,10 @@ export const BrandMenu =( {usuarioID,setNuevaEmpresaCargada} ) => {//se podria r
   const handleCloseModal = () => setShowModal(false);
   const handleShowModal = () => setShowModal(true);
   console.log("usuarioID:", usuarioID);
+
+  const salir = ()=> {
+    navigate('/')
+  }  
   
 
   return (
@@ -27,7 +32,7 @@ export const BrandMenu =( {usuarioID,setNuevaEmpresaCargada} ) => {//se podria r
       <Navbar className="bg-body-tertiary" fixed="top" bg="dark" data-bs-theme="dark">
         <Container>
             
-        <Button className='m-2' variant="outline-light" >
+        <Button className='m-2' variant="outline-light" onClick={salir}>
         Salir
       </Button>
 

@@ -20,7 +20,7 @@ export const cargarSucursalesDB = async (setCargarSucursales, navigate, empresaI
         //setCargarEmpresas(resp.data);
     } catch (error) {
         console.log(error.response.data.msg);
-        swal("ERROR", error.response.data.msg, "error");;
+        swal("ADVERTENCIA", error.response.data.msg, "warning");;
         if (error.response.status === 401) {
             localStorage.removeItem('token');
             navigate('/login');

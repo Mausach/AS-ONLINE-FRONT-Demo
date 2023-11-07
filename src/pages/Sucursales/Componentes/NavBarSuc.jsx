@@ -9,7 +9,7 @@ import { AltaSucursalModal } from './AltaSucursalModal';
 //import Modal from 'react-bootstrap/Modal';
 
 
-export const NavBarSuc =( {Empresa} ) => {//se podria recibir nombre i logo del es7udio con7able para el navbar
+export const NavBarSuc =( {Empresa, navegate} ) => {//se podria recibir nombre i logo del es7udio con7able para el navbar
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -22,13 +22,21 @@ export const NavBarSuc =( {Empresa} ) => {//se podria recibir nombre i logo del 
   const handleShowModal = () => setShowModal(true);
   console.log("empesaID:", Empresa.id);
   
+  // const volver = () => {
+  //   // navegate('/menuEC', {state:Empresa.id_Estudio_Conable})
+  // }
+  
+  const volver1 = ()=> {
+    console.log(Empresa)
+    navegate('/menuEC', {state:Empresa.id_Esutdio_Conable})
+  }  
 
   return (
     <>     
       <Navbar className="bg-body-tertiary" fixed="top" bg="dark" data-bs-theme="dark">
         <Container>
 
-        <Button className='m-2' variant="outline-light" >
+        <Button className='m-2' variant="outline-light" onClick={volver1}>
         Volver
       </Button>
 

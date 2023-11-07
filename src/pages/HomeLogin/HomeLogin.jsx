@@ -40,7 +40,6 @@ export const HomeLogin = () => {
           
           <ForularioLogin/>
           {/* O puedes redirigir al usuario usando window.location.href */}
-          <Footer/>
           
         </>
       )}  

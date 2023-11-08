@@ -4,11 +4,15 @@ import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { Nav } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
+import { useNavigate } from 'react-router-dom';
 
 
 
-export const NavBarDec =() => {//se podria recibir nombre i logo del es7udio con7able para el navbar
+
+export const NavBarDec =({empresa,navegate}) => {//se podria recibir nombre i logo del es7udio con7able para el navbar
   
+ 
+
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -21,12 +25,15 @@ export const NavBarDec =() => {//se podria recibir nombre i logo del es7udio con
   const handleShowModal = () => setShowModal(true);
   
   
+  const volver = () => {
+    navegate('/sucursales', { state: empresa})
+  }
 
   return (
     <>     
       <Navbar className="bg-body-tertiary mb-5" fixed="top" bg="dark" data-bs-theme="dark">
         <Container>
-        <Button className='m-2' variant="outline-light">
+        <Button className='m-2' variant="outline-light" onClick={volver}>
         Volver
       </Button>
 

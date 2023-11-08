@@ -27,7 +27,7 @@ export const NavBarSuc =( {Empresa, navegate} ) => {//se podria recibir nombre i
   // }
   
   const volver1 = ()=> {
-    console.log(Empresa)
+   
     navegate('/menuEC', {state:Empresa.id_Esutdio_Conable})
   }  
 

@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react'
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { cargar_empleados_x_sucursalDB } from './Helpers/Cargar_empleado_x_sucursal';
 import { TablaDeclaraciones } from './componentes/TablaDeclaraciones';
 import MyPDFViewer from './componentes/VoletaPdf';
 import { NavBarDec } from './componentes/NavBarDec';
 
 
+
 export const DeclaracionJ = () => {
+
+  const navegate = useNavigate()
 
   const { state } = useLocation();
 
@@ -42,7 +45,7 @@ export const DeclaracionJ = () => {
 
   return (
     <div className='text-dark container-fluid'>
-      <NavBarDec/>
+      <NavBarDec empresa={datosEmpSuc.empresa} navegate={navegate}  />
 {CargarTabla()}
 
 

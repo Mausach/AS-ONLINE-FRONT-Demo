@@ -44,9 +44,15 @@ export const ForularioLogin = () => {
   };
 
   return (
+    <div>
+
+   
+        <div className="bo7">
+
+        <h1>As-Online</h1>
+        </div>
     <div className="d-flex align-items-center justify-content-center customHeigth ">
       <Form className=" p-5 p-sm-4 rounded border border-white m-3 shadow " onSubmit={onSubmit}>
-        <h1 className="bo7">As-Online</h1>
         <Form.Group className="mb-3" controlId="formGroupEmail">
           <i className="bi bi-person-circle"> </i>
           <Form.Label className="text-dark" >Email address</Form.Label>
@@ -58,13 +64,24 @@ export const ForularioLogin = () => {
           <Form.Label   className="text-dark">Password</Form.Label>
           <Form.Control type="password" placeholder="Password" name="password" value={user.password}
           onChange={onInputChange}/>
+          <div className="pt-3">
+
+          <a href="#" className="text-dark">
+            ¿Olvidaste tu contraseña? Clic aquí
+          </a>
+          </div>
         </Form.Group>
         <div className="text-center">
           <button type="submit" className="btn btn-outline-primary mt-3">
             Ingresar
           </button >
+          <div>
+            
         </div>
+        </div>        
       </Form>
+        
+      
 
       {/* <form
         className="p-5 p-sm-4 rounded text-center border border-dark m-3"
@@ -133,6 +150,17 @@ export const ForularioLogin = () => {
           </button>
         </label>
       </form> */}
+      
+      
     </div>
+    <div className="text-center">
+    
+       ¿Eres Nuevo? por favor
+<button className="btn btn-outline-primary m-2" onClick={irRegistro}>
+      Registrate
+          </button> aquí.
+    </div>
+    </div>
+    
   );
 };

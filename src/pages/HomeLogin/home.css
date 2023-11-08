@@ -8,11 +8,13 @@
 .bo7{
     background-color: #727cf5;
     font-size: 40px;
-    color: black;
+    color: white;
     text-align: center;
+    border-radius: 5px;
    
 }
 
 .customHeigth{
     min-height: 70vh;
 }
+

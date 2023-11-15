@@ -16,7 +16,8 @@ export const MenuEC = () => {
 
       //estado para guardar las empresas traidos del backend
       const [cargarEmpresas, setCargarEmpresas] = useState([]);
-
+      
+      //es7ado para con7rolar si se carga una nueva empresa
       const [nuevaEmpresaCargada, setNuevaEmpresaCargada] = useState(false);
 
       const navigate = useNavigate();
@@ -25,20 +26,14 @@ export const MenuEC = () => {
     const empresasPorPagina = 6; // Número de empresas por página
     //para el paginado
     const [numPage, setNumPage] = useState(1);
-/*
-    const startIndex = (numPage - 1) * empresasPorPagina;
-    const endIndex = startIndex + empresasPorPagina;
-    const EmpresasPagina = cargarEmpresas.slice(startIndex, endIndex);
-    const numPaginas = Math.ceil(cargarEmpresas.length / empresasPorPagina);
-    //fin de datos para paginacion*/
 
-    const startIndex = (numPage - 1) * empresasPorPagina;
+
+const startIndex = (numPage - 1) * empresasPorPagina;
 const endIndex = startIndex + empresasPorPagina;
 const EmpresasPagina = Array.isArray(cargarEmpresas) ? cargarEmpresas.slice(startIndex, endIndex) : [];
 const numPaginas = Math.ceil((Array.isArray(cargarEmpresas) ? cargarEmpresas.length : 0) / empresasPorPagina);
-//const numPaginas = Math.ceil(Array.isArray(cargarEmpresas) ? cargarEmpresas.length : 0 / empresasPorPagina);
 
-
+    //para cambiar de pagina
     const cambiarPagina = (pageNumber) => {
         setNumPage(pageNumber);
         // Aquí puedes realizar alguna acción adicional, como obtener los datos de la página seleccionada
@@ -66,7 +61,7 @@ const numPaginas = Math.ceil((Array.isArray(cargarEmpresas) ? cargarEmpresas.len
         return (
           <div>
               <Container className='mt-5 p-3'>
-              {EmpresasPagina.length > 0 ? ( // Check if EmpresasPagina has items
+              {EmpresasPagina.length > 0 ? ( // Con7rolamos si hai empresas
           <div>
             <Row>
               {EmpresasPagina.map((Empresa) => (
@@ -90,49 +85,33 @@ const numPaginas = Math.ceil((Array.isArray(cargarEmpresas) ? cargarEmpresas.len
           </div>
           )
       }
-      //console.log(usuarioID);
-
-
-      useEffect(() => {
-
-       // setTimeout(() => {
-         //   setLoading(false);
-        //}, 2000);
-        //fin de animacion cargando
-
-        //EstadoPago(navigate)
-
-        if (nuevaEmpresaCargada) {
-          cargarEmpresasDB(setCargarEmpresas, navigate, usuarioID);
-          setCargarEmpresas(false)
-
-          // Verifica si la página actual está llena y si hay más empresas que no se muestran
-    if (EmpresasPagina.length === empresasPorPagina && startIndex + empresasPorPagina < cargarEmpresas.length) {
-      setNumPage(numPage + 1); // Incrementa el número de página
-    }
-
-        }else{
-          cargarEmpresasDB(setCargarEmpresas, navigate, usuarioID);
-
-        }
-
-        
-
-    }, [nuevaEmpresaCargada]);
-
-    /*
-     useEffect(() => {
-    if (condicionParaRecargar) {
-      window.location.reload();
-    }
-  }, [condicionParaRecargar]);
-
-  return <div>Contenido de tu componente</div>;
-}
-      */
       
 
+useEffect(() => {
+  if (nuevaEmpresaCargada) {
+    cargarEmpresasDB(setCargarEmpresas, navigate, usuarioID);
+    setNuevaEmpresaCargada(false);
+  } else {
+    cargarEmpresasDB(setCargarEmpresas, navigate, usuarioID);
+  }
 
+  // Calcula el número de páginas actualizado
+  const newNumPaginas = Math.ceil(cargarEmpresas.length / empresasPorPagina);
+
+  // Si el número de páginas ha cambiado, verifica si debes actualizar el número de página actual
+  if (newNumPaginas !== numPaginas) {
+    if (numPage > newNumPaginas) {
+      // Si el número de página actual es mayor que el nuevo número de páginas, redirige a la última página
+      setNumPage(newNumPaginas);
+    }
+    setNumPaginas(newNumPaginas);
+  }
+
+  // Verifica si la página actual está llena y si hay más empresas que no se muestran
+  if (EmpresasPagina.length === empresasPorPagina && startIndex + empresasPorPagina < cargarEmpresas.length) {
+    setNumPage(numPage + 1); // Incrementa el número de página
+  }
+}, [nuevaEmpresaCargada]);
 
   return (
     <div className='text-light'>

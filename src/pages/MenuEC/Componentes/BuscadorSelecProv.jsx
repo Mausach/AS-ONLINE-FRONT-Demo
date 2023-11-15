@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Select from 'react-select';
 
+//las 23 provincias del pais pero es7o debe 7raerse de una 7abla de la DB
 const options = [
     { value: 'Buenos Aires', label: 'Buenos Aires' },
     { value: 'Catamarca', label: 'Catamarca' },
@@ -25,10 +26,9 @@ const options = [
     { value: 'Santiago del Estero', label: 'Santiago del Estero' },
     { value: 'Tierra del Fuego', label: 'Tierra del Fuego' },
     { value: 'Tucumán', label: 'Tucumán' },
-    // Agrega más provincias según sea necesario
   ];
   
-  // Ahora, el array options contiene todas las provincias de Argentina
+  
   
 
 function SelectProvincia() {

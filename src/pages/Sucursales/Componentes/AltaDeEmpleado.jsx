@@ -3,17 +3,15 @@ import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import { Form } from 'react-bootstrap';
 import SelectProvincia from './BuscadorSelecProv';
-import SelectLocalidades from './BuscadorSelecLoc';
 import Select from 'react-select';
-import { starCrearSucursal } from '../Helpers/starCrearSucursal';
 import { starCrearEmpleado } from '../Helpers/starCrearEmpleado';
-//import { starCrearEmpresa } from '../Helpers/starCrearEmpresa';
+
 
 
 export const AltaDeEmpleado =({ showModal, handleCloseModal, Sucursal })=> {
 
-  //state para sucursales
-  const [empleado, setEmpleado] = useState({ //se debe modificar los da7os de la sucursal dado a que el modlo no es7a 7erminado
+  //state para empleado
+  const [empleado, setEmpleado] = useState({ //se debe modificar los da7os de empleado dado a que los modelos del back modlo no es7a 7erminado
     dni:"",
     cuil:"",
     nombre:"",
@@ -22,21 +20,20 @@ export const AltaDeEmpleado =({ showModal, handleCloseModal, Sucursal })=> {
     
 });
 
-//selec7 del sindica7o
+//selec7 de localidad es7o deberia ser un componen7e apare
 const options = [
     { value: 1, label: 'La Banda' },
     { value: 2, label: 'Frias' },
     { value: 3, label: 'Ojo de agua' },
-// Agrega más opciones según sea necesario
-  // Agrega más provincias según sea necesario
 ];
 
+//para las opciones de selec7
 const [selectedOption, setSelectedOption] = useState(null);
 
 const handleSindicatoChange = (selectedOption) => {
     setEmpleado({
       ...empleado,
-      id_Sindicato: selectedOption.value, // Establece el valor seleccionado del sindicato en el estado
+      id_Sindicato: selectedOption.value, // Establece el valor seleccionado de la localidad
     });
     setSelectedOption(selectedOption)
   };
@@ -50,9 +47,10 @@ const handleSindicatoChange = (selectedOption) => {
 }
 
 
-//captura lo el formulario y verifica los campos lanzando una alerta con swal
-const onSubmit = (e) => {//solo con7rolamos los campos que de momen7o 7enemos en el backend de empresa que no son 7odos los del formulario
+//captura lo del formulario y verifica los campos lanzando una alerta con swal
+const onSubmit = (e) => {//solo con7rolamos los campos que de momen7o 7enemos en el backend de empleado que no son 7odos los del formulario
   e.preventDefault();
+
   //fal7a asignar el sindica7o id an7es de corroborar 
   
   if (
@@ -89,7 +87,7 @@ const onSubmit = (e) => {//solo con7rolamos los campos que de momen7o 7enemos en
         <Modal.Title>Alta de Sucursales</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        {/* Agrega los campos y contenido de tu modal aquí */}
+        {/* Agregamos el formulario den7ro del modal */}
         <Form onSubmit={onSubmit}>      
 
                 <Form.Group className="mb-3" controlId="formBasicEmail">

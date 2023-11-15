@@ -2,7 +2,7 @@ import React from 'react';
 import { Document, Page, Text, View,Image, StyleSheet, PDFViewer } from '@react-pdf/renderer';
 import bwipjs from 'bwip-js'; // Importa la biblioteca de códigos de barras
 
-import Barcode from 'react-barcode';
+import Barcode from 'react-barcode';//es7o dejar para saber que ins7alaciones eliminar
 import CodigoDeBarra from './CodigoDeBarra';
 
 //ES7O NO ES UN COMPONEN7E REAC7

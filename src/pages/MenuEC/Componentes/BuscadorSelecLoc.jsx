@@ -5,11 +5,8 @@ const options = [
     { value: 'La Banda', label: 'La Banda' },
   { value: 'Frias', label: 'Frias' },
   { value: 'Ojo de agua', label: 'Ojo de agua' },
-  // Agrega más opciones según sea necesario
-    // Agrega más provincias según sea necesario
+  // Agrega más opciones según sea necesario o usar una api
   ];
-  
-  // Ahora, el array options contiene todas las provincias de Argentina
   
 
 function SelectLocalidades() {

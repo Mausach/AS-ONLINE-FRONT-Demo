@@ -10,17 +10,17 @@ import { useNavigate } from 'react-router-dom';
 
 export const AltaEmpresaModal =({ showModal, handleCloseModal, usuarioID, setNuevaEmpresaCargada })=> {
 
-  //state para usuario e email del usuario
+  //state para empresa
   const [empresa, setEmpresa] = useState({
     id_Esutdio_Conable: usuarioID,
     cuit: "",
     razonsocial: "",
     nombrefantasia: "",
     telefono: "",
-    //mandamos un rol por defec70
+    
 });
 
-const navigate = useNavigate();
+const navigate = useNavigate();//para navegar a o7ras ru7as
 
 
  //controla los cambios que se hagan en los campos del formulario
@@ -65,20 +65,6 @@ const onSubmit = (e) => {//solo con7rolamos los campos que de momen7o 7enemos en
   }
 }
 
-//prueba refresh
-/*
-const pruebaRefresh = () => {//solo con7rolamos los campos que de momen7o 7enemos en el backend de empresa que no son 7odos los del formulario
-  
-  
-  if () {
-    swal("ERROR", "Todos los campos son obligatorios", "error");
-  } else {
-    
-  }
-}*/
-
-
-
   // Agrega aquí el contenido de tu modal
 
   return (
@@ -87,7 +73,7 @@ const pruebaRefresh = () => {//solo con7rolamos los campos que de momen7o 7enemo
         <Modal.Title>Alta de empresa</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        {/* Agrega los campos y contenido de tu modal aquí */}
+        {/* Ponemo el form a den7ro del modal */}
         <Form onSubmit={onSubmit}>      
 
                 <Form.Group className="mb-3" controlId="formBasicEmail">

@@ -1,5 +1,6 @@
 import React from 'react'
 
+//navbar que no se usa eliminarlo luego
 export default function Navbar() {
   return (
     <>

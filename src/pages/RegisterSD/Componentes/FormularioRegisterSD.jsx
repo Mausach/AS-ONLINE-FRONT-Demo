@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-//import { starLogin } from '../helpers/StarLogin';
 import swal from "sweetalert";
 import './FormularioRegisterSD.css'
 
@@ -13,8 +12,8 @@ export const FormularioSD = () => {
 
   const navigate = useNavigate();
 
-  //borrar desp inicio
-
+  
+//va al regis7ro de sindica7o
   function irRegistro() {
     navigate("/registroSindicato");
   }
@@ -34,6 +33,8 @@ export const FormularioSD = () => {
       swal("ERROR", "todos los campos son obligatorios", "error");
     } else {
       swal("FUNCIONA", user.email + " " + user.password, "success");
+
+      //fal7a hacer helper i js para el me7odo que va a al back
       //starLogin(user.email, user.password, navigate);//llama al metodo starLogin del helper
     }
   };
@@ -47,7 +48,7 @@ export const FormularioSD = () => {
         <h1 className="">As-online</h1>
 
         <h3 className="text-light">
-          {/* <i className="bi bi-person-circle"> </i> */}
+          
           FORMULARIO DE SINDICATO
         </h3>
         <label
@@ -55,7 +56,7 @@ export const FormularioSD = () => {
           className="form-label"
           onSubmit={onSubmit}
         >
-          {/* <i className="bi bi-person-fill"> </i> */}
+          
           Nombre
         </label>
         <input
@@ -68,7 +69,7 @@ export const FormularioSD = () => {
         //   onChange={onInputChange}
         />
          <label for="exampleFormControlInput1" className="form-label">
-         {/* <i className="bi bi-lock-fill"> </i> */}
+         
           Nombre Corto
         </label>
         <input
@@ -84,7 +85,7 @@ export const FormularioSD = () => {
         
 
         <label for="exampleFormControlInput1" className="form-label">
-         {/* <i className="bi bi-lock-fill"> </i> */}
+         
           CUIT
         </label>
         <input
@@ -154,7 +155,7 @@ export const FormularioSD = () => {
         //   onChange={onInputChange}
           />
            <label for="exampleFormControlInput1" className="form-label">
-         {/* <i className="bi bi-lock-fill"> </i> */}
+         
           Configuracion de Registro de EC
         </label>
         <input

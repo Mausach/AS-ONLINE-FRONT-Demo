@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Select from 'react-select';
 
+//selec de provincias hacer una 7abla en la base
 const options = [
     { value: 'Buenos Aires', label: 'Buenos Aires' },
     { value: 'Catamarca', label: 'Catamarca' },
@@ -25,10 +26,10 @@ const options = [
     { value: 'Santiago del Estero', label: 'Santiago del Estero' },
     { value: 'Tierra del Fuego', label: 'Tierra del Fuego' },
     { value: 'Tucumán', label: 'Tucumán' },
-    // Agrega más provincias según sea necesario
+    
   ];
   
-  // Ahora, el array options contiene todas las provincias de Argentina
+  
   
 
 function SelectProvincia() {

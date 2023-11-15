@@ -13,7 +13,7 @@ export const starCrearEmpleado = async ( dni,cuil,nombre,apellido,sucuId) => {
 
         
         swal("FELICIDADES", resp.data.msg, "success");
-        //navigate("/*");
+        
 
     } catch (error) {
         console.log(error.response.data.msg);

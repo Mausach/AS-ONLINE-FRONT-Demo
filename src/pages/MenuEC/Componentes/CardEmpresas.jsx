@@ -1,8 +1,7 @@
 import React from 'react'
-
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-//import { guardarDatosEnCarrito } from '../helpers/OperacionesDelCarrito';
+
 
 export const CardEmpresas = ({ Empresa, navigate }) => {
 

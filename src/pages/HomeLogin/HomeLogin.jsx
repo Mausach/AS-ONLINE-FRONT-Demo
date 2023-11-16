@@ -37,12 +37,7 @@ export const HomeLogin = () => {
           {/* Aquí puedes agregar tu contenido principal */}
           
           <ForularioLogin/>
-<<<<<<< HEAD
           {/* O puedes redirigir al usuario usando window.location.href */}
-=======
-          
-          <Footer/>
->>>>>>> d8782e0de8e59fc696e203ede3fe47d846a1b4dd
           
         </>
       )}  

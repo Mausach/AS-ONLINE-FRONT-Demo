@@ -109,11 +109,7 @@ export const MenuSucursales = () => {
     <div className='text-light container-fluid'>
       
       <h1>{Empresa.nombrefantasia}</h1>
-<<<<<<< HEAD
       <NavBarSuc Empresa={Empresa} navegate={navigate}/>
-=======
-      <NavBarSuc Empresa={Empresa} setNuevaSucursalCargada={setNuevaSucursalCargada}/>
->>>>>>> d8782e0de8e59fc696e203ede3fe47d846a1b4dd
       
       {cargarcards_Sucursales()}
       

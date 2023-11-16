@@ -6,10 +6,7 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 import { Nav } from 'react-bootstrap';
 import { AltaEmpresaModal } from './AltaEmpresaModal';
 
-<<<<<<< HEAD
 //import Modal from 'react-bootstrap/Modal';
-=======
->>>>>>> d8782e0de8e59fc696e203ede3fe47d846a1b4dd
 
 
 export const BrandMenu =( {usuarioID,setNuevaEmpresaCargada,navigate} ) => {//se podria recibir nombre i logo del es7udio con7able para el navbar

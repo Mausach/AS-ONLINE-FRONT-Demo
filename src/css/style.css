@@ -17,3 +17,9 @@ body{
     border-color: var(--bs-light);
     color: var(--bs-light);
   }
+
+  .bg-bo7{
+    background:linear-gradient(to right,#727cf5,#1C82AD);
+    color: white;
+}
+

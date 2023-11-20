@@ -1,5 +1,6 @@
+import { Footer } from './comp/Footer'
 import { AppRouter } from './rutas/routes'
-import  Footer  from './pages/Footer/Footer.jsx'
+
 
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
   return (
     <>
         <AppRouter/>
+        <Footer/>
         {/* <Footer/> */}
         </>
   )

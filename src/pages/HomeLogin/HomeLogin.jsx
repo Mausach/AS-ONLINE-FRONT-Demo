@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import 'animate.css/animate.min.css'; // Importa los estilos de animate.css
 import '../HomeLogin/home.css'
 import { ForularioLogin } from './Componentes/FromularioLogin';
-import Footer from '../Footer/Footer';
+
 
 
 export const HomeLogin = () => {
@@ -24,11 +24,11 @@ export const HomeLogin = () => {
   
 
       return (
-        <div className='text-dark'>
+        <div className='mt-3'>
           {showWelcome ? (
         <div className="animate__animated animate__fadeIn">
           
-          <h1 className='tamañoAnimacion'>As-Online</h1>
+          <h1 className='tamañoAnimacion mi-letra'>As-Online</h1>
         </div>
       ) : (
         // Cuando la animación ha terminado (showWelcome === false),

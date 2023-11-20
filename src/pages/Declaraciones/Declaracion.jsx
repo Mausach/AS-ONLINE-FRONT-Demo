@@ -45,7 +45,7 @@ export const DeclaracionJ = () => {
 
   return (
     <div className='text-dark container-fluid'>
-      <NavBarDec empresa={datosEmpSuc.empresa} navegate={navegate}  />
+      <NavBarDec empresa={datosEmpSuc.empresa} sucursal={datosEmpSuc.sucursal} navegate={navegate}  />
 {CargarTabla()}
 
 

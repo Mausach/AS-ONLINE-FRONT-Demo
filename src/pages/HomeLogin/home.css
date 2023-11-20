@@ -6,13 +6,32 @@
 }
 
 .bo7{
-    background-color: #727cf5;
+    /*background-color: #727cf5;*/
+    background:linear-gradient(to right,#727cf5,#1C82AD);
     font-size: 40px;
     color: white;
     text-align: center;
     border-radius: 5px;
    
 }
+
+.mi-letra {
+    color: #3498db; /* Color del texto */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombreado */
+    animation: tornasol 5s infinite alternate; /* Efecto tornasol */
+  }
+  
+  @keyframes tornasol {
+    0% {
+      color: #3498db;
+    }
+    50% {
+      color: #13005A; /* Cambia a otro color a la mitad de la animación */
+    }
+    100% {
+      color: #3498db;
+    }
+  }
 
 .customHeigth{
     min-height: 70vh;

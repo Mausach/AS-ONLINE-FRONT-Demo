@@ -6,6 +6,7 @@ import { cargarEmpresasDB } from './Helpers/cargarEmpresasDB';
 import { CardEmpresas } from './Componentes/CardEmpresas';
 import { BrandMenu } from './Componentes/Navbar';
 
+
 export const MenuEC = () => {
 
   const location = useLocation();
@@ -42,7 +43,7 @@ const numPaginas = Math.ceil((Array.isArray(cargarEmpresas) ? cargarEmpresas.len
 
     const Paginacion = () => {
         return (
-            <Pagination className='d-flex align-items-center justify-content-center custom-pagination' border="light">
+            <Pagination className='d-flex align-items-center justify-content-center custom-pagination pb-5' border="light">
                 {Array.from({ length: numPaginas }).map((_, index) =>(
                     <Pagination.Item
                         key={index + 1}
@@ -59,7 +60,7 @@ const numPaginas = Math.ceil((Array.isArray(cargarEmpresas) ? cargarEmpresas.len
 
       const cargarcards_Empresas = () => {
         return (
-          <div>
+          <div >
               <Container className='mt-5 p-3'>
               {EmpresasPagina.length > 0 ? ( // Con7rolamos si hai empresas
           <div>
@@ -115,12 +116,10 @@ useEffect(() => {
 
   return (
     <div className='text-light'>
+
       <BrandMenu usuarioID={usuarioID} setNuevaEmpresaCargada={setNuevaEmpresaCargada} navigate={navigate}/>
       {cargarcards_Empresas()} 
-      
-      <div>
-       
-      </div>
+  
       
     </div>
   )

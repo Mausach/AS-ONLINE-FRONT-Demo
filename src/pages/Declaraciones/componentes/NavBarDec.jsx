@@ -5,11 +5,12 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 import { Nav } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import { useNavigate } from 'react-router-dom';
+import { AltaDeEmpleado } from '../../Sucursales/Componentes/AltaDeEmpleado';
 
 
 
 
-export const NavBarDec =({empresa,navegate}) => {//se podria recibir nombre i logo del es7udio con7able para el navbar
+export const NavBarDec =({empresa,sucursal,navegate}) => {//se podria recibir nombre i logo del es7udio con7able para el navbar
   
  
 
@@ -34,25 +35,33 @@ export const NavBarDec =({empresa,navegate}) => {//se podria recibir nombre i lo
       <Navbar className="bg-body-tertiary mb-5" fixed="top" bg="dark" data-bs-theme="dark">
         <Container>
         <Button className='m-2' variant="outline-light" onClick={volver}>
+        <i class="bi bi-arrow-left-square-fill"> </i>
         Volver
       </Button>
 
 
 
         <Button className='m-2' variant="outline-light" onClick={handleShow}>
+        <i class="bi bi-list"> </i>
         Menu
       </Button>
           <Navbar.Brand  href="#home" className="ms-auto">
             
             
-            {"Sucursal"}
-            <img
+            
+            {sucursal.nombre+' '}
+            <i class="bi bi-boxes"></i>
+
+{/*
+<img
               alt=""
               src="/img/logo.svg"
               width="30"
               height="30"
               className="d-inline-block align-top"
             />
+*/}
+            
             
           </Navbar.Brand>
           
@@ -70,7 +79,7 @@ export const NavBarDec =({empresa,navegate}) => {//se podria recibir nombre i lo
         <hr></hr>
         <Nav.Link>
 
-        <Button className='m-2' variant="outline-light">
+        <Button className='m-2' variant="outline-light" onClick={handleShowModal}>
           Alta de Empleado
           </Button>
           
@@ -86,12 +95,17 @@ export const NavBarDec =({empresa,navegate}) => {//se podria recibir nombre i lo
 
         <Nav.Link >
 
-        Menu solo de demo
+        Estas opciones son solo de ejemplo...
 
         </Nav.Link>  
 
         </Offcanvas.Body>
       </Offcanvas>
+
+
+      <AltaDeEmpleado showModal={showModal} handleCloseModal={handleCloseModal} Sucursal={sucursal}/>
+      
+      
 
       
     </>

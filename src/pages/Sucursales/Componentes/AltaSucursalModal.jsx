@@ -90,35 +90,35 @@ const onSubmit = (e) => {//solo con7rolamos los campos que de momen7o 7enemos en
 
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label className='text-dark'>
-                        <i className="bi bi-person-fill"> </i>
+                        
                         CUIT</Form.Label>
                     <Form.Control type="text" name='cuit' maxLength={13} value={Empresa.cuit} readOnly />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label className='text-dark'>
-                        <i className="bi bi-lock-fill"> </i>
+                        
                         Nombre de fantasia</Form.Label>
                     <Form.Control type="text" name='nombre' placeholder="Nombre de fantasia" minLength={3} maxLength={20} value={sucursal.nombre} onChange={onInputChange} />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label className='text-dark'>
-                        <i className="bi bi-lock-fill"> </i>
+                        
                         Calle</Form.Label>
                     <Form.Control type="text" name='calle' placeholder="calle" minLength={5} maxLength={20} /*value={user.password} onChange={onInputChange}*/ />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label className='text-dark'>
-                        <i className="bi bi-lock-fill"> </i>
+                        
                         Nro</Form.Label>
                     <Form.Control type="number" name='nro' placeholder="nro" minLength={5} maxLength={20} /*value={user.password} onChange={onInputChange}*/ />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label className='text-dark'>
-                        <i className="bi bi-lock-fill"> </i>
+                        
                         Piso</Form.Label>
                     <Form.Control type="number" name='piso' placeholder="piso" minLength={5} maxLength={20} /*value={user.password} onChange={onInputChange}*/ />
                 </Form.Group>
@@ -135,21 +135,21 @@ const onSubmit = (e) => {//solo con7rolamos los campos que de momen7o 7enemos en
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label className='text-dark'>
-                        <i className="bi bi-lock-fill"> </i>
+                        
                         Codigo postal</Form.Label>
                     <Form.Control type="number" name='codigo postal' placeholder="codigo postal" minLength={4} maxLength={6} /*value={user.password} onChange={onInputChange}*/ />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label className='text-dark'>
-                        <i className="bi bi-lock-fill"> </i>
+                        
                         telefono</Form.Label>
                     <Form.Control type="text" name='telefono' placeholder="telefono" minLength={4} maxLength={11} /*value={empresa.telefono} onChange={onInputChange}*/ />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label className='text-dark'>
-                        <i className="bi bi-lock-fill"> </i>
+                        
                         email de la sucursal</Form.Label>
                     <Form.Control type="email" name='email' placeholder="email" maxLength={30} /*value={user.password} onChange={onInputChange}*/ />
                 </Form.Group>

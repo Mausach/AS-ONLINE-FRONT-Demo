@@ -9,7 +9,7 @@ import { AltaSucursalModal } from './AltaSucursalModal';
 //import Modal from 'react-bootstrap/Modal';
 
 
-export const NavBarSuc =( {Empresa, navegate} ) => {//se podria recibir nombre i logo del es7udio con7able para el navbar
+export const NavBarSuc =( {Empresa, navegate,setNuevaSucursalCargada} ) => {//se podria recibir nombre i logo del es7udio con7able para el navbar
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -37,23 +37,31 @@ export const NavBarSuc =( {Empresa, navegate} ) => {//se podria recibir nombre i
         <Container>
 
         <Button className='m-2' variant="outline-light" onClick={volver1}>
+        
+        <i class="bi bi-arrow-left-square-fill"> </i>
         Volver
       </Button>
 
         <Button className='m-2' variant="outline-light" onClick={handleShow}>
+        <i class="bi bi-list"> </i>
         Menu
       </Button>
           <Navbar.Brand  href="#home" className="ms-auto">
             
             
-            {Empresa.nombrefantasia}
-            <img
+            {Empresa.nombrefantasia+' '}
+
+            <i class="bi bi-boxes"></i>
+            {/*
+             <img
               alt=""
               src="/img/logo.svg"
               width="30"
               height="30"
               className="d-inline-block align-top"
             />
+            */}
+            
             
           </Navbar.Brand>
           
@@ -72,16 +80,19 @@ export const NavBarSuc =( {Empresa, navegate} ) => {//se podria recibir nombre i
         <Nav.Link>
 
         <Button className='m-2' variant="outline-light" onClick={handleShowModal}>
+        <i class="bi bi-pencil-square"> </i>
           Alta de Sucursal
           </Button>
           
           </Nav.Link>
 
-      <Nav.Link href="#features">
-
-      <Button className='m-2' variant="outline-light">
+      <Nav.Link>
+{/* 
+<Button className='m-2' variant="outline-light">
         ver declaracioner realizadas
         </Button>
+        */}
+      
 
         </Nav.Link> 
 

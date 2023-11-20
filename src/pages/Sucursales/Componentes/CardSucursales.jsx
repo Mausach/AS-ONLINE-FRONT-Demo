@@ -31,12 +31,12 @@ export const CardSucursales = ({ Sucursal, navigate, Empresa }) => {
         <Row>
           <Col sm={4}>
             <Card.Title>{Sucursal.nombre}</Card.Title>
-            <Card.Text>ID de localidad: {Sucursal.id_localidad}</Card.Text>
+            <Card.Text>ID de empresa: {Sucursal.id_Empresa}</Card.Text>
           </Col>
           <Col sm={8}>
             <Button className='m-2' variant="dark" onClick={ir_Declaracion}>DDJJ</Button>
             <Button className='m-2' variant="dark">Baja de empleado</Button>
-            <Button className='m-2' variant="outline-success" onClick={handleShowModal}>Alta de empleado</Button>
+            <Button className='m-2' variant="outline-primary" onClick={handleShowModal}>Alta de empleado</Button>
           </Col>
         </Row>
       </Card.Body>

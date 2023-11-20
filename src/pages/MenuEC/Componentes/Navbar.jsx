@@ -32,12 +32,15 @@ export const BrandMenu =( {usuarioID,setNuevaEmpresaCargada,navigate} ) => {//se
       <Navbar className="bg-body-tertiary" fixed="top" bg="dark" data-bs-theme="dark">
         <Container>
             
-        <Button className='m-2' variant="outline-light" onClick={salir}>
+        <Button className='me-3' variant="outline-light" onClick={salir}>
+        <i class="bi bi-box-arrow-left"> </i>
         Salir
       </Button>
 
 
-        <Button className='m-2' variant="outline-light" onClick={handleShow}>
+        <Button className='' variant="outline-light" onClick={handleShow}>
+        <i class="bi bi-list"> </i>
+        
         Menu
       </Button>
             
@@ -45,14 +48,19 @@ export const BrandMenu =( {usuarioID,setNuevaEmpresaCargada,navigate} ) => {//se
           <Navbar.Brand  href="#home" className="ms-auto">
             
             Esstudio Contable
-            {' '}
+            {'  '}
+            <i class="bi bi-graph-up"> </i>
+            {/*
+            
             <img
               alt=""
-              src="/img/logo.svg"
+              src=""
               width="30"
               height="30"
               className="d-inline-block align-top"
             />
+            */}
+            
             
           </Navbar.Brand>
           
@@ -71,21 +79,25 @@ export const BrandMenu =( {usuarioID,setNuevaEmpresaCargada,navigate} ) => {//se
         <Nav.Link>
 
         <Button className='m-2' variant="outline-light" onClick={handleShowModal}>
+        <i class="bi bi-pencil-square"> </i>
           Alta de empresa
           </Button>
           
           </Nav.Link>
-
-      <Nav.Link href="#features">
+{/*
+<Nav.Link href="#features">
 
       <Button className='m-2' variant="outline-light">
         ver declaracioner realizadas
         </Button>
 
         </Nav.Link> 
-
+*/}
+      
         </Offcanvas.Body>
       </Offcanvas>
+
+      
 
 
       <AltaEmpresaModal showModal={showModal} handleCloseModal={handleCloseModal} usuarioID={usuarioID} setNuevaEmpresaCargada={setNuevaEmpresaCargada}/>
